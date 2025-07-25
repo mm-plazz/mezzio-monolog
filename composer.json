@@ -1,29 +1,32 @@
 {
-    "name": "geo6/mezzio-monolog",
+    "name": "mm-plazz/mezzio-monolog",
     "type": "library",
     "description": "Mezzio Monolog ErrorHandler",
     "license": "GPL-3.0-or-later",
     "require": {
-        "monolog/monolog": "^1.24 || ^2.0",
-        "mezzio/mezzio": "^3.2",
-        "laminas/laminas-servicemanager": "^3.4",
-        "laminas/laminas-dependency-plugin": "^2.1"
+        "monolog/monolog": ">=2.0",
+        "mezzio/mezzio": ">=3.2",
+        "laminas/laminas-servicemanager": ">=3.4",
+        "laminas/laminas-dependency-plugin": ">=2.1"
     },
     "require-dev": {
-        "phpstan/phpstan": "^0.12.56",
-        "phpstan/phpstan-strict-rules": "^0.12.5",
-        "sentry/sdk": "^3.0",
-        "squizlabs/php_codesniffer": "^3.4"
+        "phpstan/phpstan": ">=0.12.56",
+        "phpstan/phpstan-strict-rules": ">=0.12.5",
+        "sentry/sdk": ">=3.0",
+        "squizlabs/php_codesniffer": ">=3.4"
     },
     "suggest": {
         "sentry/sdk": "Allow sending log messages to Sentry.io"
     },
     "config": {
-        "sort-packages": true
+        "sort-packages": true,
+        "allow-plugins": {
+            "laminas/laminas-dependency-plugin": true
+        }
     },
     "autoload": {
         "psr-4": {
-            "Geo6\\Mezzio\\Monolog\\": "src/"
+            "Plazz\\Mezzio\\Monolog\\": "src/"
         }
     },
     "scripts": {

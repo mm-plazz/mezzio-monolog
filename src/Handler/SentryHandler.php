@@ -1,6 +1,6 @@
 <?php
 
-namespace Geo6\Mezzio\Monolog\Handler;
+namespace Plazz\Mezzio\Monolog\Handler;
 
 use Monolog\Handler\AbstractProcessingHandler;
 use Monolog\Logger;
@@ -58,22 +58,12 @@ class SentryHandler extends AbstractProcessingHandler
 
     private static function getSeverityFromLevel(int $level): Severity
     {
-        switch ($level) {
-            case Logger::DEBUG:
-                return Severity::debug();
-            case Logger::INFO:
-            case Logger::NOTICE:
-                return Severity::info();
-            case Logger::WARNING:
-                return Severity::warning();
-            case Logger::ERROR:
-                return Severity::error();
-            case Logger::CRITICAL:
-            case Logger::ALERT:
-            case Logger::EMERGENCY:
-                return Severity::fatal();
-            default:
-                return Severity::info();
-        }
+        return match ($level) {
+            Logger::DEBUG => Severity::debug(),
+            Logger::WARNING => Severity::warning(),
+            Logger::ERROR => Severity::error(),
+            Logger::CRITICAL, Logger::ALERT, Logger::EMERGENCY => Severity::fatal(),
+            default => Severity::info(),
+        };
     }
 }

@@ -1,6 +1,6 @@
 <?php
 
-namespace Geo6\Mezzio\Monolog;
+namespace Plazz\Mezzio\Monolog;
 
 use Laminas\Stratigility\Middleware\ErrorHandler;
 

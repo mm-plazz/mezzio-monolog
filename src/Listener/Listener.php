@@ -1,8 +1,8 @@
 <?php
 
-namespace Geo6\Mezzio\Monolog\Listener;
+namespace Plazz\Mezzio\Monolog\Listener;
 
-use Geo6\Mezzio\Monolog\Handler\SentryHandler;
+use Plazz\Mezzio\Monolog\Handler\SentryHandler;
 use Monolog\Handler\StreamHandler;
 use Monolog\Logger;
 use Monolog\Processor\GitProcessor;
@@ -13,18 +13,14 @@ use Throwable;
 
 class Listener
 {
-    /** @var array */
-    private $config;
-
     /** @var bool */
-    private $debug;
+    private bool $debug;
 
-    /** @var \Monolog\Logger */
-    private $monolog;
+    /** @var Logger */
+    private Logger $monolog;
 
     public function __construct(array $config, bool $debug)
     {
-        $this->config = $config;
         $this->debug = $debug;
 
         $this->monolog = new Logger('mapper');

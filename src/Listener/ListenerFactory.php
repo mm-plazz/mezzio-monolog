@@ -1,6 +1,6 @@
 <?php
 
-namespace Geo6\Mezzio\Monolog\Listener;
+namespace Plazz\Mezzio\Monolog\Listener;
 
 use Interop\Container\ContainerInterface;
 use Laminas\ServiceManager\Factory\FactoryInterface;
@@ -10,7 +10,7 @@ class ListenerFactory implements FactoryInterface
     /**
      * {@inheritdoc}
      */
-    public function __invoke(ContainerInterface $container, $requestedName, array $options = null)
+    public function __invoke(ContainerInterface $container, $requestedName, array $options = null): Listener
     {
         $config = $container->get('config');
 
