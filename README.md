@@ -1,8 +1,8 @@
 # Mezzio Monolog ErrorHandler
 
-[![Latest Stable Version](https://poser.pugx.org/Plazz/mezzio-monolog/v/stable)](https://packagist.org/packages/Plazz/mezzio-monolog)
-[![Total Downloads](https://poser.pugx.org/Plazz/mezzio-monolog/downloads)](https://packagist.org/packages/Plazz/mezzio-monolog)
-[![Monthly Downloads](https://poser.pugx.org/Plazz/mezzio-monolog/d/monthly.png)](https://packagist.org/packages/Plazz/mezzio-monolog)
+[![Latest Stable Version](https://poser.pugx.org/mm-plazz/mezzio-monolog/v/stable)](https://packagist.org/packages/Plazz/mezzio-monolog)
+[![Total Downloads](https://poser.pugx.org/Plazz/mezzio-monolog/downloads)](https://packagist.org/packages/mm-plazz/mezzio-monolog)
+[![Monthly Downloads](https://poser.pugx.org/Plazz/mezzio-monolog/d/monthly.png)](https://packagist.org/packages/mm-plazz/mezzio-monolog)
 [![Software License](https://img.shields.io/badge/license-GPL--3.0-brightgreen.svg)](LICENSE)
 
 This library enables [Monolog](https://github.com/Seldaek/monolog) as ErrorHandler in Mezzio.
