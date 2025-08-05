@@ -2,6 +2,7 @@
 
 namespace Plazz\Mezzio\Monolog\Listener;
 
+use Monolog\Level;
 use Plazz\Mezzio\Monolog\Handler\SentryHandler;
 use Monolog\Handler\StreamHandler;
 use Monolog\Logger;
@@ -29,13 +30,13 @@ class Listener
 
         if (isset($config['stream'])) {
             $path = $config['stream']['path'];
-            $level = $config['stream']['level'] ?? Logger::DEBUG;
+            $level = $config['stream']['level'] ?? Level::Debug;
 
             $this->monolog->pushHandler(new StreamHandler($path, $level));
         }
 
         if (isset($config['sentry'])) {
-            $level = $config['sentry']['level'] ?? Logger::DEBUG;
+            $level = $config['sentry']['level'] ?? Level::Debug;
 
             init($config['sentry']);
 
@@ -71,11 +72,11 @@ class Listener
      *
      * This method allows for compatibility with common interfaces.
      *
-     * @param string|int $level   The log level
+     * @param int|string $level   The log level
      * @param string     $message The log message
      * @param array      $context The log context
      */
-    public function log($level, string $message, array $context = []): void
+    public function log(int|string $level, string $message, array $context = []): void
     {
         $this->monolog->log($level, $message, $context);
     }

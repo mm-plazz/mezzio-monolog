@@ -2,8 +2,8 @@
 
 namespace Plazz\Mezzio\Monolog\Listener;
 
-use Interop\Container\ContainerInterface;
 use Laminas\ServiceManager\Factory\FactoryInterface;
+use Psr\Container\ContainerInterface;
 
 class ListenerFactory implements FactoryInterface
 {

@@ -4,8 +4,8 @@ namespace Plazz\Mezzio\Monolog;
 
 use Laminas\Stratigility\Middleware\ErrorHandler;
 use Plazz\Mezzio\Monolog\Listener\Listener;
-use Interop\Container\ContainerInterface;
 use Laminas\ServiceManager\Factory\DelegatorFactoryInterface;
+use Psr\Container\ContainerInterface;
 
 class ListenerDelegator implements DelegatorFactoryInterface
 {

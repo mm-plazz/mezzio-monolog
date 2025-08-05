@@ -3,7 +3,8 @@
 namespace Plazz\Mezzio\Monolog\Handler;
 
 use Monolog\Handler\AbstractProcessingHandler;
-use Monolog\Logger;
+use Monolog\Level;
+use Monolog\LogRecord;
 use function Sentry\captureEvent;
 use Sentry\Event;
 use Sentry\EventHint;
@@ -14,7 +15,7 @@ use Throwable;
 
 class SentryHandler extends AbstractProcessingHandler
 {
-    protected function write(array $record): void
+    protected function write(LogRecord $record): void
     {
         $event = Event::createEvent();
         $event->setMessage($record['message']);
@@ -43,7 +44,7 @@ class SentryHandler extends AbstractProcessingHandler
                 if (is_array($value)) {
                     foreach ($value as $subkey => $subvalue) {
                         $scope->setExtra(
-                            sprintf('%s.%s', (string) $key, (string) $subkey),
+                            sprintf('%s.%s', $key, $subkey),
                             $subvalue
                         );
                     }
@@ -59,10 +60,10 @@ class SentryHandler extends AbstractProcessingHandler
     private static function getSeverityFromLevel(int $level): Severity
     {
         return match ($level) {
-            Logger::DEBUG => Severity::debug(),
-            Logger::WARNING => Severity::warning(),
-            Logger::ERROR => Severity::error(),
-            Logger::CRITICAL, Logger::ALERT, Logger::EMERGENCY => Severity::fatal(),
+            Level::Debug => Severity::debug(),
+            Level::Warning => Severity::warning(),
+            Level::Error => Severity::error(),
+            Level::Critical, Level::Alert, Level::Emergency => Severity::fatal(),
             default => Severity::info(),
         };
     }
