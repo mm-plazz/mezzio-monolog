@@ -14,12 +14,13 @@ use Throwable;
 
 class Listener
 {
-    /** @var bool */
     private bool $debug;
 
-    /** @var Logger */
     private Logger $monolog;
 
+    /**
+     * @param array<string, mixed> $config
+     */
     public function __construct(array $config, bool $debug)
     {
         $this->debug = $debug;
@@ -28,17 +29,23 @@ class Listener
 
         $this->monolog->pushProcessor(new GitProcessor());
 
-        if (isset($config['stream'])) {
-            $path = $config['stream']['path'];
-            $level = $config['stream']['level'] ?? Level::Debug;
+        if (isset($config['stream']) && is_array($config['stream'])) {
+            if (isset($config['stream']['path'])) {
+                $path = (string) $config['stream']['path'];
+            } else {
+                $path = 'data/log/app.log';
+            }
+            $level = $config['stream']['level'] instanceof Level ? $config['stream']['level'] : Level::Debug;
 
             $this->monolog->pushHandler(new StreamHandler($path, $level));
         }
 
-        if (isset($config['sentry'])) {
-            $level = $config['sentry']['level'] ?? Level::Debug;
+        if (isset($config['sentry']) && is_array($config['sentry'])) {
+            $level = $config['sentry']['level'] instanceof Level ? $config['sentry']['level'] : Level::Debug;
 
-            init($config['sentry']);
+            /** @var array{dsn: string} $sentryConfig */
+            $sentryConfig = $config['sentry'];
+            init($sentryConfig);
 
             $this->monolog->pushHandler(new SentryHandler($level));
         }
@@ -72,11 +79,11 @@ class Listener
      *
      * This method allows for compatibility with common interfaces.
      *
-     * @param int|string $level   The log level
-     * @param string     $message The log message
-     * @param array      $context The log context
+     * @param Level              $level   The log level
+     * @param string             $message The log message
+     * @param array<string,mixed> $context The log context
      */
-    public function log(int|string $level, string $message, array $context = []): void
+    public function log(Level $level, string $message, array $context = []): void
     {
         $this->monolog->log($level, $message, $context);
     }
@@ -85,7 +92,7 @@ class Listener
      * Adds a log record at the DEBUG level.
      *
      * @param string $message The log message
-     * @param array  $context The log context
+     * @param array<string,mixed>  $context The log context
      */
     public function debug(string $message, array $context = []): void
     {
@@ -96,7 +103,7 @@ class Listener
      * Adds a log record at the INFO level.
      *
      * @param string $message The log message
-     * @param array  $context The log context
+     * @param array<string,mixed>  $context The log context
      */
     public function info(string $message, array $context = []): void
     {
@@ -107,7 +114,7 @@ class Listener
      * Adds a log record at the NOTICE level.
      *
      * @param string $message The log message
-     * @param array  $context The log context
+     * @param array<string,mixed>  $context The log context
      */
     public function notice(string $message, array $context = []): void
     {
@@ -118,7 +125,7 @@ class Listener
      * Adds a log record at the WARNING level.
      *
      * @param string $message The log message
-     * @param array  $context The log context
+     * @param array<string,mixed>  $context The log context
      */
     public function warning(string $message, array $context = []): void
     {
@@ -129,7 +136,7 @@ class Listener
      * Adds a log record at the ERROR level.
      *
      * @param string $message The log message
-     * @param array  $context The log context
+     * @param array<string,mixed>  $context The log context
      */
     public function error(string $message, array $context = []): void
     {
@@ -140,7 +147,7 @@ class Listener
      * Adds a log record at the CRITICAL level.
      *
      * @param string $message The log message
-     * @param array  $context The log context
+     * @param array<string,mixed>  $context The log context
      */
     public function critical(string $message, array $context = []): void
     {
@@ -151,7 +158,7 @@ class Listener
      * Adds a log record at the ALERT level.
      *
      * @param string $message The log message
-     * @param array  $context The log context
+     * @param array<string,mixed>  $context The log context
      */
     public function alert(string $message, array $context = []): void
     {
@@ -162,7 +169,7 @@ class Listener
      * Adds a log record at the EMERGENCY level.
      *
      * @param string $message The log message
-     * @param array  $context The log context
+     * @param array<string,mixed>  $context The log context
      */
     public function emergency(string $message, array $context = []): void
     {

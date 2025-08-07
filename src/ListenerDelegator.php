@@ -10,10 +10,19 @@ use Psr\Container\ContainerInterface;
 class ListenerDelegator implements DelegatorFactoryInterface
 {
     /**
-     * {@inheritdoc}
+     * @param ContainerInterface $container
+     * @param string $name
+     * @param callable $callback
+     * @param array|null $options
+     * @return ErrorHandler
      */
-    public function __invoke(ContainerInterface $container, $name, callable $callback, array $options = null): ErrorHandler
-    {
+    public function __invoke(
+        ContainerInterface $container,
+        $name,
+        callable $callback,
+        $options = null
+    ): ErrorHandler {
+        /** @var Listener $listener */
         $listener = $container->get(Listener::class);
 
         /** @var ErrorHandler $errorHandler */

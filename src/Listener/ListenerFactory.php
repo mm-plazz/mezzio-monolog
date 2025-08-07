@@ -8,14 +8,19 @@ use Psr\Container\ContainerInterface;
 class ListenerFactory implements FactoryInterface
 {
     /**
-     * {@inheritdoc}
+     * @param ContainerInterface $container
+     * @param string $requestedName
+     * @param array|null $options
+     * @return Listener
      */
-    public function __invoke(ContainerInterface $container, $requestedName, array $options = null): Listener
+    public function __invoke(ContainerInterface $container, $requestedName, $options = null): Listener
     {
+        /** @var array<string, mixed> $config */
         $config = $container->get('config');
 
+        /** @var array<string, mixed> $monolog */
         $monolog = $config['monolog'] ?? [];
-        $debug = $config['debug'] ?? false;
+        $debug = (bool) ($config['debug'] ?? false);
 
         return new Listener($monolog, $debug);
     }

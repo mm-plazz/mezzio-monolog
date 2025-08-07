@@ -1,0 +1,11 @@
+parameters:
+	ignoreErrors:
+		-
+			message: "#^Method Plazz\\\\Mezzio\\\\Monolog\\\\Listener\\\\ListenerFactory\\:\\:__invoke\\(\\) has parameter \\$options with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Listener/ListenerFactory.php
+
+		-
+			message: "#^Method Plazz\\\\Mezzio\\\\Monolog\\\\ListenerDelegator\\:\\:__invoke\\(\\) has parameter \\$options with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/ListenerDelegator.php
