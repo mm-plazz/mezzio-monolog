@@ -1,5 +1,6 @@
 # zend-expressive-skeleton specific
 includes:
     - vendor/phpstan/phpstan-strict-rules/rules.neon
+    - phpstan-baseline.neon
 parameters:
     reportUnmatchedIgnoredErrors: true

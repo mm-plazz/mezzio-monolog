@@ -5,16 +5,16 @@
     "license": "GPL-3.0-or-later",
     "require": {
         "php": ">=8.2",
-        "monolog/monolog": ">=3.9",
-        "mezzio/mezzio": ">=3.21",
-        "laminas/laminas-servicemanager": ">=4.4",
-        "laminas/laminas-dependency-plugin": ">=2.7"
+        "monolog/monolog": "^3.9",
+        "mezzio/mezzio": "^3.21",
+        "laminas/laminas-servicemanager": "^4.4",
+        "laminas/laminas-dependency-plugin": "^2.7"
     },
     "require-dev": {
-        "phpstan/phpstan": ">=2.1.22",
-        "phpstan/phpstan-strict-rules": ">=2.0.5",
-        "sentry/sdk": ">=4.0",
-        "squizlabs/php_codesniffer": ">=3.4"
+        "phpstan/phpstan": "^2.1.22",
+        "phpstan/phpstan-strict-rules": "^2.0.5",
+        "sentry/sdk": "^4.0",
+        "squizlabs/php_codesniffer": "^3.4"
     },
     "suggest": {
         "sentry/sdk": "Allow sending log messages to Sentry.io"

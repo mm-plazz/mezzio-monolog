@@ -18,29 +18,26 @@ class SentryHandler extends AbstractProcessingHandler
     protected function write(LogRecord $record): void
     {
         $event = Event::createEvent();
-        $event->setMessage($record['message']);
-        $event->setLevel(self::getSeverityFromLevel($record['level']));
+        $event->setMessage($record->message);
+        $event->setLevel(self::getSeverityFromLevel($record->level));
 
         withScope(function (Scope $scope) use ($record, $event): void {
-            // $scope->clear();
-
-            if (isset($record['context']['exception']) && $record['context']['exception'] instanceof Throwable) {
-                $hint = EventHint::fromArray(['exception' => $record['context']['exception']]);
-
-                unset($record['context']['exception']);
+            $hint = null;
+            if (isset($record->context['exception']) && $record->context['exception'] instanceof Throwable) {
+                $hint = EventHint::fromArray(['exception' => $record->context['exception']]);
+                $context = $record->context;
+                unset($context['exception']);
+                $record = $record->with(...['context' => $context]);
             }
 
-            $scope->setExtra('monolog.channel', $record['channel']);
-            $scope->setExtra('monolog.level', $record['level_name']);
+            $scope->setExtra('monolog.channel', $record->channel);
+            $scope->setExtra('monolog.level', $record->level->getName());
 
-            $context = $record['context'] ?? [];
-            foreach ($context as $key => $value) {
+            foreach ($record->context as $key => $value) {
                 $scope->setExtra((string) $key, $value);
             }
 
-            $extra = $record['extra'] ?? [];
-
-            foreach ($extra as $key => $value) {
+            foreach ($record->extra as $key => $value) {
                 if (is_array($value)) {
                     foreach ($value as $subkey => $subvalue) {
                         $scope->setExtra(
@@ -53,11 +50,11 @@ class SentryHandler extends AbstractProcessingHandler
                 }
             }
 
-            captureEvent($event, $hint ?? null);
+            captureEvent($event, $hint);
         });
     }
 
-    private static function getSeverityFromLevel(int $level): Severity
+    private static function getSeverityFromLevel(Level $level): Severity
     {
         return match ($level) {
             Level::Debug => Severity::debug(),
