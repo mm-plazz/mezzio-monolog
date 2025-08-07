@@ -1,19 +1,11 @@
 parameters:
 	ignoreErrors:
 		-
-			message: '#^Cannot cast mixed to string\.$#'
-			identifier: cast.string
-			count: 1
-			path: src/Listener/Listener.php
-
-		-
-			message: '#^Parameter \#3 \$options \(array\<string, mixed\>\|null\) of method Plazz\\Mezzio\\Monolog\\Listener\\ListenerFactory\:\:__invoke\(\) should be contravariant with parameter \$options \(array\|null\) of method Laminas\\ServiceManager\\Factory\\FactoryInterface\:\:__invoke\(\)$#'
-			identifier: method.childParameterType
+			message: "#^Method Plazz\\\\Mezzio\\\\Monolog\\\\Listener\\\\ListenerFactory\\:\\:__invoke\\(\\) has parameter \\$options with no value type specified in iterable type array\\.$#"
 			count: 1
 			path: src/Listener/ListenerFactory.php
 
 		-
-			message: '#^Parameter \#4 \$options \(array\<string, mixed\>\|null\) of method Plazz\\Mezzio\\Monolog\\ListenerDelegator\:\:__invoke\(\) should be contravariant with parameter \$options \(array\|null\) of method Laminas\\ServiceManager\\Factory\\DelegatorFactoryInterface\:\:__invoke\(\)$#'
-			identifier: method.childParameterType
+			message: "#^Method Plazz\\\\Mezzio\\\\Monolog\\\\ListenerDelegator\\:\\:__invoke\\(\\) has parameter \\$options with no value type specified in iterable type array\\.$#"
 			count: 1
 			path: src/ListenerDelegator.php

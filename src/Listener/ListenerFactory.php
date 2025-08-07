@@ -10,10 +10,10 @@ class ListenerFactory implements FactoryInterface
     /**
      * @param ContainerInterface $container
      * @param string $requestedName
-     * @param array<string, mixed>|null $options
+     * @param array|null $options
      * @return Listener
      */
-    public function __invoke(ContainerInterface $container, $requestedName, ?array $options = null): Listener
+    public function __invoke(ContainerInterface $container, $requestedName, $options = null): Listener
     {
         /** @var array<string, mixed> $config */
         $config = $container->get('config');
