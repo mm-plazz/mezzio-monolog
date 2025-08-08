@@ -7,7 +7,6 @@
         "php": ">=8.2",
         "monolog/monolog": "^3.9",
         "mezzio/mezzio": "^3.21",
-        "laminas/laminas-servicemanager": "^4.4",
         "laminas/laminas-dependency-plugin": "^2.7"
     },
     "require-dev": {
