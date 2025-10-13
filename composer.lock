@@ -290,20 +290,20 @@
         },
         {
             "name": "laminas/laminas-httphandlerrunner",
-            "version": "2.12.0",
+            "version": "2.13.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laminas/laminas-httphandlerrunner.git",
-                "reference": "b14da3519c650e9436e410cfedee6f860312eff9"
+                "reference": "181eaeeb838ad3d80fbbcfb0657a46bc212bbd4e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laminas/laminas-httphandlerrunner/zipball/b14da3519c650e9436e410cfedee6f860312eff9",
-                "reference": "b14da3519c650e9436e410cfedee6f860312eff9",
+                "url": "https://api.github.com/repos/laminas/laminas-httphandlerrunner/zipball/181eaeeb838ad3d80fbbcfb0657a46bc212bbd4e",
+                "reference": "181eaeeb838ad3d80fbbcfb0657a46bc212bbd4e",
                 "shasum": ""
             },
             "require": {
-                "php": "~8.1.0 || ~8.2.0 || ~8.3.0 || ~8.4.0",
+                "php": "~8.1.0 || ~8.2.0 || ~8.3.0 || ~8.4.0 || ~8.5.0",
                 "psr/http-message": "^1.0 || ^2.0",
                 "psr/http-message-implementation": "^1.0 || ^2.0",
                 "psr/http-server-handler": "^1.0"
@@ -353,7 +353,7 @@
                     "type": "community_bridge"
                 }
             ],
-            "time": "2025-05-13T21:21:16+00:00"
+            "time": "2025-10-12T20:58:29+00:00"
         },
         {
             "name": "laminas/laminas-servicemanager",
@@ -580,16 +580,16 @@
         },
         {
             "name": "mezzio/mezzio",
-            "version": "3.22.1",
+            "version": "3.23.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/mezzio/mezzio.git",
-                "reference": "43587052003a4fc047c3ab7969cdec53bc25b6af"
+                "reference": "cdea1c65153a6c817a3bf548d6e63fc3b8d4f246"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/mezzio/mezzio/zipball/43587052003a4fc047c3ab7969cdec53bc25b6af",
-                "reference": "43587052003a4fc047c3ab7969cdec53bc25b6af",
+                "url": "https://api.github.com/repos/mezzio/mezzio/zipball/cdea1c65153a6c817a3bf548d6e63fc3b8d4f246",
+                "reference": "cdea1c65153a6c817a3bf548d6e63fc3b8d4f246",
                 "shasum": ""
             },
             "require": {
@@ -598,7 +598,7 @@
                 "laminas/laminas-stratigility": "^3.5",
                 "mezzio/mezzio-router": "^3.15.0",
                 "mezzio/mezzio-template": "^2.2",
-                "php": "~8.1.0 || ~8.2.0 || ~8.3.0 || ~8.4.0",
+                "php": "~8.2.0 || ~8.3.0 || ~8.4.0 || ~8.5.0",
                 "psr/container": "^1.0||^2.0",
                 "psr/http-factory": "^1.0",
                 "psr/http-message": "^1.0.1 || ^2.0.0",
@@ -615,15 +615,15 @@
                 "zendframework/zend-expressive": "*"
             },
             "require-dev": {
-                "filp/whoops": "^2.18.0",
-                "laminas/laminas-coding-standard": "^3.0.1",
-                "laminas/laminas-diactoros": "^3.5.0",
-                "laminas/laminas-servicemanager": "^3.23.0",
-                "mezzio/mezzio-fastroute": "^3.13",
-                "mezzio/mezzio-laminasrouter": "^3.11",
-                "phpunit/phpunit": "^10.5.45",
+                "filp/whoops": "^2.18.4",
+                "laminas/laminas-coding-standard": "^3.1.0",
+                "laminas/laminas-diactoros": "^3.8.0",
+                "laminas/laminas-servicemanager": "^3.23.1",
+                "mezzio/mezzio-fastroute": "^3.14",
+                "mezzio/mezzio-laminasrouter": "^3.12",
+                "phpunit/phpunit": "^11.5.42",
                 "psalm/plugin-phpunit": "^0.19.5",
-                "vimeo/psalm": "^6.10.1"
+                "vimeo/psalm": "^6.13.1"
             },
             "suggest": {
                 "filp/whoops": "^2.1 to use the Whoops error handler",
@@ -682,25 +682,25 @@
                     "type": "community_bridge"
                 }
             ],
-            "time": "2025-09-22T10:12:28+00:00"
+            "time": "2025-10-13T13:21:13+00:00"
         },
         {
             "name": "mezzio/mezzio-router",
-            "version": "3.18.0",
+            "version": "3.19.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/mezzio/mezzio-router.git",
-                "reference": "75e9a3e636ee69f3a51006772cf29c00cb5da675"
+                "reference": "3df4363e70611ddf096db95c62df6aa98817872c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/mezzio/mezzio-router/zipball/75e9a3e636ee69f3a51006772cf29c00cb5da675",
-                "reference": "75e9a3e636ee69f3a51006772cf29c00cb5da675",
+                "url": "https://api.github.com/repos/mezzio/mezzio-router/zipball/3df4363e70611ddf096db95c62df6aa98817872c",
+                "reference": "3df4363e70611ddf096db95c62df6aa98817872c",
                 "shasum": ""
             },
             "require": {
                 "fig/http-message-util": "^1.1.5",
-                "php": "~8.1.0 || ~8.2.0 || ~8.3.0 || ~8.4.0",
+                "php": "~8.2.0 || ~8.3.0 || ~8.4.0 || ~8.5.0",
                 "psr/container": "^1.1.2 || ^2.0",
                 "psr/http-factory": "^1.0.2",
                 "psr/http-message": "^1.0.1 || ^2.0.0",
@@ -712,13 +712,13 @@
                 "zendframework/zend-expressive-router": "*"
             },
             "require-dev": {
-                "laminas/laminas-coding-standard": "~2.5.0",
-                "laminas/laminas-diactoros": "^3.4.0",
-                "laminas/laminas-servicemanager": "^4.2.0",
-                "laminas/laminas-stratigility": "^4.0.2",
-                "phpunit/phpunit": "^10.5.36",
+                "laminas/laminas-coding-standard": "~3.1.0",
+                "laminas/laminas-diactoros": "^3.6.0",
+                "laminas/laminas-servicemanager": "^4.4.0",
+                "laminas/laminas-stratigility": "^4.2.0",
+                "phpunit/phpunit": "^11.5.42",
                 "psalm/plugin-phpunit": "^0.19.0",
-                "vimeo/psalm": "^5.26.1"
+                "vimeo/psalm": "^6.13.1"
             },
             "suggest": {
                 "mezzio/mezzio-aurarouter": "^3.0 to use the Aura.Router routing adapter",
@@ -764,33 +764,33 @@
                     "type": "community_bridge"
                 }
             ],
-            "time": "2024-10-16T21:18:01+00:00"
+            "time": "2025-10-11T08:41:44+00:00"
         },
         {
             "name": "mezzio/mezzio-template",
-            "version": "2.12.0",
+            "version": "2.13.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/mezzio/mezzio-template.git",
-                "reference": "6a3c0211b8e4d403fefce39b65f7a7cd704635fd"
+                "reference": "ad72bb31036d0639a5c5a502af234217faf6932f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/mezzio/mezzio-template/zipball/6a3c0211b8e4d403fefce39b65f7a7cd704635fd",
-                "reference": "6a3c0211b8e4d403fefce39b65f7a7cd704635fd",
+                "url": "https://api.github.com/repos/mezzio/mezzio-template/zipball/ad72bb31036d0639a5c5a502af234217faf6932f",
+                "reference": "ad72bb31036d0639a5c5a502af234217faf6932f",
                 "shasum": ""
             },
             "require": {
-                "php": "~8.1.0 || ~8.2.0 || ~8.3.0 || ~8.4.0"
+                "php": "~8.2.0 || ~8.3.0 || ~8.4.0 || ~8.5.0"
             },
             "conflict": {
                 "zendframework/zend-expressive-template": "*"
             },
             "require-dev": {
                 "laminas/laminas-coding-standard": "~3.1.0",
-                "phpunit/phpunit": "^10.5.45",
+                "phpunit/phpunit": "^11.5.42",
                 "psalm/plugin-phpunit": "^0.19.5",
-                "vimeo/psalm": "^6.10.0"
+                "vimeo/psalm": "^6.13.1"
             },
             "suggest": {
                 "mezzio/mezzio-laminasviewrenderer": "^2.0 to use the laminas-view PhpRenderer template renderer",
@@ -828,7 +828,7 @@
                     "type": "community_bridge"
                 }
             ],
-            "time": "2025-09-30T08:42:10+00:00"
+            "time": "2025-10-11T08:45:28+00:00"
         },
         {
             "name": "monolog/monolog",
