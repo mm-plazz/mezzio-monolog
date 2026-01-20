@@ -13,7 +13,7 @@
         "phpstan/phpstan": "^1.9",
         "phpstan/phpstan-strict-rules": "^1.5",
         "sentry/sdk": "^4.0",
-        "squizlabs/php_codesniffer": "^3.4"
+        "squizlabs/php_codesniffer": "^3.4 || ^4.0"
     },
     "suggest": {
         "sentry/sdk": "Allow sending log messages to Sentry.io"
